@@ -16,6 +16,7 @@ import json
 import manager_podcast
 import api_podcasting_index
 import config
+from flask_bootstrap import Bootstrap
 
 
 configuration_flask = {
@@ -25,6 +26,7 @@ configuration_flask = {
 
 lock = threading.Lock()
 app = Flask(__name__)
+Bootstrap(app)
 app.secret_key = 'ed9e80f235a0c0ea6d945efc87f16c88e4a6b47a'
 app.config.from_mapping(configuration_flask)
 cache = Cache(app)
